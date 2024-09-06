@@ -1,0 +1,35 @@
+html {
+  box-sizing: border-box
+}
+
+*, 
+*::before, 
+*::after { 
+  box-sizing: inherit;
+}
+
+/* :root {
+  font-size: 80%
+} */
+
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+}
+
+/* .header-logo-container {
+  margin: auto;
+  padding: 10px 20px 0;
+  max-width: 500px;
+} */
+
+
+img {
+  height: 56px;
+  margin-left:15px;
+}
