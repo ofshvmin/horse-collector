@@ -11,7 +11,11 @@
 
 {% block content %}
 <div class="page-header">
-  <h1>Add a Horse</h1>
+  {% if horse %}
+    <h1>Edit {{ horse.name }}</h1>
+  {% else %}
+    <h1>Add a Horse</h1>
+  {% endif %}
 </div>
 <form action="" method="post" class="form-container">
   {% csrf_token %}
@@ -21,3 +25,11 @@
   <button type="submit" class="btn submit">Submit!</button>
 </form>
 {% endblock  %}
+
+
+  <!-- New if/else block -->
+  {% if cat %}
+    <h1>Edit {{ cat.name }}</h1>
+  {% else %}
+    <h1>Add a Cat</h1>
+  {% endif %}

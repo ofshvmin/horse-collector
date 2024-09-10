@@ -20,9 +20,12 @@
   </div>
   <div class="horse-details">
     <h1>{{ horse.name }}</h1>
-      <h2>{{ horse.age }}</h2>
-      <h2>{{ horse.breed }}</h2>
+      <h2>A {{ horse.age }} year old {{ horse.breed }}</h2>
       <p>{{ horse.description }}</p>
+      <div class="horse-actions">
+        <a href="{% url 'horse-update' horse.id %}" class="btn warn">Edit</a>
+        <a href="{% url 'horse-delete' horse.id %}" class="btn danger">Delete</a>
+      </div>
   </div>
 </section>
 
