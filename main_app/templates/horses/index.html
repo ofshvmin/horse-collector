@@ -13,18 +13,20 @@
 
 <section class="card-container">
   {% for horse in horses %}
-    <div class="card-container">
-      <div class="card-content">
-        <div class="card-img-container">
-          <img 
-            src="{% static 'images/starface.svg' %}" 
-            alt="an adorable horse face"
-          >
+    <div class="card">
+      <a href="/horses/{{ horse.id }}">
+        <div class="card-content">
+          <div class="card-img-container">
+            <img 
+              src="{% static 'images/starface.svg' %}" 
+              alt="an adorable horse face"
+            >
+          </div>
+          <h2 class="card-title">{{ horse.name }}</h2>
+          <p>A {{ horse.age }} year old {{ horse.breed }}</p>
+          <p><small>{{ horse.description }}</small></p>
         </div>
-        <h2 class="card-title">{{ horse.name }}</h2>
-        <p>A {{ horse.age }} year old {{ horse.breed }}</p>
-        <p><small>{{ horse.description }}</small></p>
-      </div>
+      </a>
     </div>
   {% endfor %}
 </section>
