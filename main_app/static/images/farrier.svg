@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Ground -->
+  <rect x="0" y="150" width="200" height="50" fill="#7cfc00"/>
+
+  <!-- Horse Body -->
+  <ellipse cx="100" cy="100" rx="50" ry="30" fill="#8B4513"/>
+
+  <!-- Horse Neck and Head -->
+  <rect x="130" y="70" width="20" height="20" fill="#8B4513"/>
+  <circle cx="155" cy="75" r="10" fill="#8B4513"/>
+  <circle cx="150" cy="73" r="2" fill="#000"/>
+  <circle cx="160" cy="73" r="2" fill="#000"/>
+  
+  <!-- Horse Tail -->
+  <path d="M 50 100 C 40 130, 30 140, 20 100" stroke="#8B4513" stroke-width="5" fill="none"/>
+
+  <!-- Horse Legs -->
+  <rect x="65" y="120" width="10" height="30" fill="#8B4513"/>
+  <rect x="75" y="120" width="10" height="30" fill="#8B4513"/>
+  <rect x="115" y="120" width="10" height="30" fill="#8B4513"/>
+  <rect x="125" y="120" width="10" height="30" fill="#8B4513"/>
+  
+  <!-- Farrier -->
+  <circle cx="40" cy="130" r="10" fill="#000"/>
+  <rect x="35" y="140" width="10" height="20" fill="#000"/>
+  <ellipse cx="40" cy="160" rx="5" ry="10" fill="#000"/>
+
+  <!-- Farrier Hammer -->
+  <rect x="30" y="140" width="5" height="2" fill="#000"/>
+  <rect x="25" y="135" width="5" height="10" fill="#000"/>
+
+  <!-- Hoof being held -->
+  <rect x="75" y="145" width="5" height="5" fill="#8B4513"/>
+</svg>
