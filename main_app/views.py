@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Horse
 
 
 # horses = [
@@ -16,4 +17,5 @@ def about(request):
   return render(request, 'about.html')
 
 def horse_index(request):
+  horses = Horse.objects.all()
   return render(request, 'horses/index.html', { 'horses': horses })
