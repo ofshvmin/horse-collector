@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic.edit import CreateView
 from .models import Horse
 
 
@@ -17,3 +17,7 @@ def horse_index(request):
 def horse_detail(request, horse_id):
   horse = Horse.objects.get(id=horse_id)
   return render(request, 'horses/detail.html', { 'horse': horse })
+
+class HorseCreate(CreateView):
+  model = Horse
+  fields = '__all__'
