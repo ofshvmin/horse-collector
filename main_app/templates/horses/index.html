@@ -14,7 +14,7 @@
 <section class="card-container">
   {% for horse in horses %}
     <div class="card">
-      <a href="/horses/{{ horse.id }}">
+      <a href="{% url 'horse-detail' horse.id %}">
         <div class="card-content">
           <div class="card-img-container">
             <img 
@@ -23,8 +23,6 @@
             >
           </div>
           <h2 class="card-title">{{ horse.name }}</h2>
-          <p>A {{ horse.age }} year old {{ horse.breed }}</p>
-          <p><small>{{ horse.description }}</small></p>
         </div>
       </a>
     </div>
