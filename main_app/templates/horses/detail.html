@@ -49,6 +49,12 @@
       class="subsection-content"
       autocomplete="off"
     >
+
+    {% if horse.days_since_last_farrier_appt %}
+      <p>It's been {{horse.days_since_last_farrier_appt}} days(s) since {{horse.name}}'s last Farrier appointment. </p>
+    {% else %}
+      <p>There are no farrier appointments</p>
+    {% endif %}
       {% csrf_token %}
       {{ farrier_appt_form.as_p }}
       <button type="submit" class="btn submit">Add Appointment</button>
