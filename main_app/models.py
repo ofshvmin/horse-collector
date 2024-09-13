@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-
+from datetime import date
 
 SERVICES = ( 
   ('T', 'A Hoof Trim'),
@@ -17,6 +17,16 @@ class Horse(models.Model):
 
   def __str__(self):
     return self.name
+  
+  def days_since_last_farrier_appt(self):
+    latest_appt = self.farrierappt_set.order_by('-date').first()
+
+    if not latest_appt:
+      return None
+    
+    delta = date.today() - latest_appt.date
+    
+    return delta.days
 
   def get_absolute_url(self):
     return reverse("horse-detail", kwargs={"horse_id": self.id})
