@@ -59,7 +59,7 @@ class FarrierAppt(models.Model):
   class Meta:
     ordering = ['-date']
 
-class SpecialCare(models.Model):
+class Care(models.Model):
   category = models.CharField(
     max_length=1,
     choices=CATEGORY,
@@ -71,3 +71,9 @@ class SpecialCare(models.Model):
     default=FREQUENCY[0][0]
   )
   description = models.TextField(max_length=250)
+
+  def __str__(self):
+    return self.name
+  
+  def get_absolute_url(self):
+    return reverse('care-detail', kwargs={"pk": self.id})

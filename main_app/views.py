@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Horse
+from django.views.generic import ListView, DetailView
+from .models import Horse, Care
 from .forms import FarrierApptForm
 
 
@@ -40,4 +41,12 @@ def add_farrierappt(request, horse_id):
     new_farrierappt.save()
   return redirect('horse-detail', horse_id=horse_id)
 
-# next step is to set up the date picker
+class CareCreate(CreateView):
+  model = Care
+  fields = '__all__'
+
+class CareList(ListView):
+  model = Care
+
+class CareDetail(DeleteView):
+  model = Care
