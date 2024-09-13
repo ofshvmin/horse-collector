@@ -8,6 +8,19 @@ SERVICES = (
   ('B', 'A Hoof Trim and Shoes')
 )
 
+CATEGORY = (
+  ('D', 'Diet'),
+  ('E', 'Exercise'),
+  ('M', 'Medical')
+)
+
+FREQUENCY = (
+  ('D', 'Daily'),
+  ('W', 'Weekly'),
+  ('M', 'Monthly'),
+  ('Q', 'Quarterly')
+)
+
 # Create your models here.
 class Horse(models.Model):
   name = models.CharField(max_length=100)
@@ -45,3 +58,16 @@ class FarrierAppt(models.Model):
   
   class Meta:
     ordering = ['-date']
+
+class SpecialCare(models.Model):
+  category = models.CharField(
+    max_length=1,
+    choices=CATEGORY,
+    default=CATEGORY[0][0]
+  )
+  frequency = models.CharField(
+    max_length=1,
+    choices=FREQUENCY,
+    default=FREQUENCY[0][0]
+  )
+  description = models.TextField(max_length=250)
